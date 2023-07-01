@@ -37,7 +37,7 @@ df[df['Complaint Type']=='Noise'].count()
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/7340e1a0-ad5e-4e85-a8c1-2b2df670f3d3)
 <br>
 <br>
-If we want to in general Noise as a broad complaint type, and not only <b>Noise<b>, we can use the following method that will include a broader type of Noises.
+If we want to in general Noise as a broad complaint type, and not only <b>Noise</b>, we can use the following method that will include a broader type of Noises.
 <br>
 df2=df[df['Complaint Type'].str.contains('oise')]
 df2.count()
