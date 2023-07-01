@@ -10,7 +10,8 @@ df = pd.read_csv('https://raw.githubusercontent.com/CunyLaguardiaDataAnalytics/d
 <br>
 <br>
 df
-
+<br>
+<br>
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/5de6b4e3-4c0e-4003-b826-55dd4e1d193a)
 <br>
 <br>
@@ -19,6 +20,7 @@ Let's take a look of which are the columns of this dataframe
 <br>
 df.columns
 <br>
+<br>
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/cab7a9bb-0e42-4063-8a46-7ad3fd1a6109)
 <br>
 <br>
@@ -26,6 +28,7 @@ We want to see which is the Borough with the most complaints
 <br>
 <br>
 df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
+<br>
 <br>
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/d6393ee1-4468-4614-a57b-b30f9faec8df)
 <br>
@@ -39,29 +42,37 @@ df[df['Complaint Type']=='Noise'].count()
 <br>
 If we want to in general Noise as a broad complaint type, and not only <b>Noise</b>, we can use the following method that will include a broader type of Noises.
 <br>
+<br>
 df2=df[df['Complaint Type'].str.contains('oise')]
 df2.count()
+<br>
 <br>
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/93aefdbe-546f-4ad4-9eb6-98a1fadad44b)
 <br>
 <br>
 We can visualize that the code above brought in all types of Noise, because we used a "wildcard" method for the word Noise
 <br>
+<br>
 df
+<br>
 <br>
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/4eb74b2d-22ae-4228-b0d5-923b0fb27192)
 <br>
 <br>
 Let's plot a line chart of the above dataframe df2
 <br>
+<br>
 df2.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False).plot()
+<br>
 <br>
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/05ba6cfc-f3ce-4cbd-8283-eeefc6ef4749)
 <br>
 <br>
 The above dataframe df2 now its presented as a bar chart
 <br>
+<br>
 df2.groupby(['Borough'])['Unique Key'].count().sort_values(ascending = False).plot(kind='bar')
+<br>
 <br>
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/cf5b2100-566f-4587-a8c1-c464e21e701a)
 <br>
@@ -71,29 +82,39 @@ A similar way of groping the dataframe df2, by Borough and calling it to become 
 <br>
 grouping=df2.groupby(['Borough'])['Unique Key']
 <br>
+<br>
 count_of_grouping=grouping.count()
+<br>
 <br>
 sorting=count_of_grouping.sort_values(ascending=False)
 <br>
+<br>
 sorting.plot(kind='bar')
+<br>
 <br>
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/ae01acf5-f68f-4565-aaf0-fc8c0766cc85)
 <br>
 <br>
 If we want to see how many are the specific "Noise - Residential" Complaint type, we can see there are 5838 cases by using the .shape command
 <br>
+<br>
 df_noise_res=df[df['Complaint Type'] =='Noise - Residential']
 <br>
+<br>
 df_noise_res.shape
+<br>
 <br>
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/1b9f7f00-872f-45c3-88f9-32d1a3e82bd5)
 <br>
 <br>
 If we want to see how many are the specific "Noise - Commercial" Complaint type, we can see there are 1297 cases by using the .shape command
 <br>
+<br>
 df_noise_com=df[df['Complaint Type'] =='Noise - Commercial']
 <br>
+<br>
 df_noise_com.shape
+<br>
 <br>
 ![image](https://github.com/marcosalinas777/nyc311complaints/assets/95108103/cdb1bd7c-15c3-4776-9015-92be899b9d72)
 
